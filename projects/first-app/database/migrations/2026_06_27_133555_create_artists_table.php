@@ -26,6 +26,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('artists', function (Blueprint $table) {
+            $table->dropIndex('name');
+        });
         Schema::dropIfExists('artists');
     }
 };

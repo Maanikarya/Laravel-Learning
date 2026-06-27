@@ -11,3 +11,7 @@ php artisan make:migration create_recently_played_table
 Create Fresh migration: {Before run migratoin because new project}
 
 php artisan migrate:fresh
+
+
+To Rename the table:
+php artisan make:migration rename_title_in_songs_table --table=song

@@ -25,6 +25,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('playlist_song', function (Blueprint $table) {
+            $table->dropUnique('playlist_id');
+            $table->dropUnique('song_id');
+        });
         Schema::dropIfExists('playlist_song');
     }
 };

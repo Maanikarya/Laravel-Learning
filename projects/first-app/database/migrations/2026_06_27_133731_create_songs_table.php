@@ -31,6 +31,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('songs', function (Blueprint $table) {
+            $table->dropIndex('title');
+        });
         Schema::dropIfExists('songs');
     }
 };
