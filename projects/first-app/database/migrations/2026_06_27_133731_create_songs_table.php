@@ -13,15 +13,16 @@ return new class extends Migration
     {
         Schema::create('songs', function (Blueprint $table) {
             $table->id();
-            $table->foreign('album_id')->references('id')->on('albums');
-            $table->foreign('artist_id')->references('id')->on('artists');
-            $table->foreign('genre_id')->references('id')->on('genres');
+            $table->foreignId('album_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('artist_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('genre_id')->nullable()->constrained()->cascadeOnDelete();
             $table->string('title');
-            $table->string('duration');
+            $table->integer('duration');
             $table->string('audio_path');
-            $table->string('cover_image');
-            $table->integer('play_count');
+            $table->string('cover_image')->nullable();
+            $table->unsignedBigInteger('play_count')->default(0);
             $table->timestamps();
+            $table->index('title');
         });
     }
 

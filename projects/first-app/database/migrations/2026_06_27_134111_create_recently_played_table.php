@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('recently_played', function (Blueprint $table) {
             $table->id();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('song_id')->references('id')->on('songs');
-            $table->dateTime('played_at');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('song_id')->constrained()->cascadeOnDelete();
+            $table->timestamp('played_at');
             $table->timestamps();
+            $table->unique(['user_id' , 'song_id']);
+            $table->index('played_at');
         });
     }
 

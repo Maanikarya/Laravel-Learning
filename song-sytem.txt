@@ -7,3 +7,7 @@ php artisan make:model Playlist -m
 php artisan make:migration create_playlist_song_table
 php artisan make:migration create_favorites_table
 php artisan make:migration create_recently_played_table
+
+Create Fresh migration: {Before run migratoin because new project}
+
+php artisan migrate:fresh

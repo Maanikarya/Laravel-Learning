@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('bio')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
+            $table->index('name');
         });
     }
 

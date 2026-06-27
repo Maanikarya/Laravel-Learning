@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('playlist_song', function (Blueprint $table) {
             $table->id();
-            $table->foreign('playlist_id')->references('id')->on('playlists');
-            $table->foreign('song_id')->references('id')->on('songs');
+            $table->foreignId('playlist_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('song_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
+            $table->unique(['playlist_id' , 'song_id']);
         });
     }
 
