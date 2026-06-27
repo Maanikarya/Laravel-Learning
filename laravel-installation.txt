@@ -1,0 +1,43 @@
+Laravel Docs:
+
+1. Download xamp
+2. Download composer
+3. Download laravel installer:
+
+composer global require laravel/installer
+
+4. Create laravel app:
+
+laravel new your-app-name
+
+5. Install composer in the app:
+
+cd your-app-name
+composer install 
+
+6. Generates the Key:
+php artisan key:generate
+
+
+7. Update: 
+
+DB_CONNECTION=mysql
+
+CACHE_STORE=file
+SESSION_DRIVER=file
+QUEUE_CONNECTION=database
+
+8. Clear the Cache: 
+php artisan config:clear
+php artisan cache:clear
+(or)
+php aritsan optimize
+
+
+9. Run the App:
+php aritsan serve
+
+
+10. Make model :
+
+ php artisan make:model Artist -m 
