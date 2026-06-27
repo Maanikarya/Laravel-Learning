@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Playlist;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use App\Models\Song;
 
 class User extends Authenticatable
 {
@@ -53,4 +55,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Playlist::class);
     }
+
+    public function favoriteSongs(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Song::class,
+            'favorites_song',
+            'user_id',
+            'song_id'
+        )->withTimestamps();
+    }
+
 }

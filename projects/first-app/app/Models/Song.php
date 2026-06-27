@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Album;
@@ -9,9 +10,11 @@ use App\Models\Artist;
 use App\Models\Genre;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\Models\Playlist;
+use App\Models\User;
 
 class Song extends Model
 {
+    use HasFactory;
     protected $fillable = [
         'artist_id',
         'album_id',
@@ -41,6 +44,16 @@ class Song extends Model
     public function playlists(): BelongsToMany
     {
         return $this->belongsToMany(Playlist::class);
+    }
+
+    public function favoritedByUsers(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            User::class,
+            'favorites_song',
+            'song_id',
+            'user_id'
+        )->withTimestamps();
     }
 
 }

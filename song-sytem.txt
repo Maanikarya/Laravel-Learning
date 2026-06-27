@@ -15,3 +15,15 @@ php artisan migrate:fresh
 
 To Rename the table:
 php artisan make:migration rename_title_in_songs_table --table=song
+
+
+To make factories:
+php artisan make:factory ArtistFactory --model=Artist
+php artisan make:factory PlaylistFactory --model=Playlist
+
+To make diffrent seeders:
+php artisan make:seeder GenreSeeder
+
+Run seeder:
+php artisan db:seed
+
