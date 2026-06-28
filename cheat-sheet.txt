@@ -31,3 +31,30 @@ php artisan db:seed
 
 php artisan make:controller ArtistController --resource
 
+## In the Web.php 
+Route::resource('artists' , ArtistController::class);
+
+## Create Request:
+php artisan make:request StoreArtistRequest
+
+## Create Service:
+
+app->Services->ArtistService.php
+
+code:
+<?php
+
+namespace App\Services;
+
+use App\Models\Artist;
+
+class ArtistService
+{
+
+}
+?>
+
+
+## make image public:
+
+php artisan storage:link

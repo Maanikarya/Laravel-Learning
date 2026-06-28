@@ -14,6 +14,7 @@
             <th>Id</th>
             <th>Name</th>
             <th>Bio</th>
+            <th>Image</th>
             <th>Action</th>
         </tr>
         @foreach ($artists as $artist)
@@ -22,11 +23,23 @@
                 <td>{{ $artist->name }}</td>
                 <td>{{ $artist->bio }}</td>
                 <td>
+                     <img src="{{ $artist->image_url }}" alt="{{$artist->name}}">
+                </td>
+                <td>
                     <a href="{{ route('artists.edit' , $artist->id ) }}">
                         Edit
                     </a>
                     <br>
-                    <a href="#">Delete</a>
+                    <a href="{{ route('artists.show' , $artist->id ) }}">View</a>
+                    <br>
+                    <form action="{{ route('artists.destroy' , $artist->id ) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" onclick="return confirm('Are you sure want to delete the artist')">
+                            Delete
+                        </button>
+                    </form>
                 </td>
             </tr>
         @endforeach

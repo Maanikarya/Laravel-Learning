@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Album;
 use App\Models\Song;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Artist extends Model
 {
-    use HasFactory;
+    use HasFactory , SoftDeletes;
     protected $fillable = [
         'name',
         'bio',
