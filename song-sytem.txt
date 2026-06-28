@@ -1,4 +1,4 @@
-Create migrations:
+## Create migrations:
 
 php artisan make:model Album -m
 php artisan make:model Genre -m
@@ -8,22 +8,26 @@ php artisan make:migration create_playlist_song_table
 php artisan make:migration create_favorites_table
 php artisan make:migration create_recently_played_table
 
-Create Fresh migration: {Before run migratoin because new project}
+## Create Fresh migration: {Before run migratoin because new project}
 
 php artisan migrate:fresh
 
 
-To Rename the table:
+## To Rename the table:
 php artisan make:migration rename_title_in_songs_table --table=song
 
 
-To make factories:
+## To make factories:
 php artisan make:factory ArtistFactory --model=Artist
 php artisan make:factory PlaylistFactory --model=Playlist
 
-To make diffrent seeders:
+## To make diffrent seeders:
 php artisan make:seeder GenreSeeder
 
-Run seeder:
+## Run seeder:
 php artisan db:seed
+
+## Create Controllers
+
+php artisan make:controller Api/ArtistController --api 
 

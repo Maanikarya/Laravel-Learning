@@ -36,9 +36,9 @@ class DatabaseSeeder extends Seeder
         //     PlaylistSongSeeder::class,
         // ]);
 
-        $this->call([
-           FavouriteSongSeeder::class
-        ]);
+        // $this->call([
+        //    FavouriteSongSeeder::class
+        // ]);
 
 
     }
