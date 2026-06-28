@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artist Index</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
+
     @if ( session('sucess') )
         <p>
             {{ session('sucess') }}
@@ -14,19 +10,30 @@
     <h1>Artists</h1>
     <a href="{{ route('artists.create') }}">Create Artists</a>
     <table>
-          <tr>
+            <tr>
             <th>Id</th>
             <th>Name</th>
             <th>Bio</th>
+            <th>Action</th>
         </tr>
         @foreach ($artists as $artist)
             <tr>
                 <td> {{ $artist->id }} </td>
                 <td>{{ $artist->name }}</td>
                 <td>{{ $artist->bio }}</td>
+                <td>
+                    <a href="{{ route('artists.edit' , $artist->id ) }}">
+                        Edit
+                    </a>
+                    <br>
+                    <a href="#">Delete</a>
+                </td>
             </tr>
         @endforeach
-        {{ $artists->links() }}
+        {{-- {{ $artists->links() }} --}}
     </table>
-</body>
-</html>
+
+
+@endsection
+
+

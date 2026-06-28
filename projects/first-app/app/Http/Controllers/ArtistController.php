@@ -35,7 +35,8 @@ class ArtistController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
-            'bio' => 'required'
+            'bio' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
         Artist::create([
             'name' => $request->input('name'),
@@ -58,17 +59,30 @@ class ArtistController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Artist $artist)
     {
-        //
+        return view('artists.edit' , [ 'artist' => $artist ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Artist $artist)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'bio' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
+
+        $artist->update([
+            'name' => $request->name,
+            'bio' => $request->bio,
+        ]);
+        
+        return redirect()
+        ->route('artists.index')
+        ->with('sucess' , 'Artist Updated sucessfully!');
     }
 
     /**
