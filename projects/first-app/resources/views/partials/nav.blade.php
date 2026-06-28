@@ -8,7 +8,7 @@ Artists
 
 |
 
-<a href="#">
+<a href="{{ route('albums.index') }}">
 
 Albums
 

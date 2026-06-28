@@ -9,18 +9,17 @@ class ArtistService{
 
     public function create(array $data)
     {
-        if( $data['image'] ){
+        if( isset($data['image']) ){
             // Store the Image in the DB
             $data['image'] = $data['image']->store('artist' , 'public');
         }
 
-        $artist = Artist::create($data);
-        return $artist;
+        return Artist::create($data);
     }
 
     public function update(Artist $artist, array $data)
     {
-        if( $data['image'] ){
+        if( isset($data['image']) ){
             
             if($artist->image){
                 Storage::disk('public')->delete($artist->image);

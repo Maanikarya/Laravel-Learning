@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\User;
 use App\Models\Song;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Playlist extends Model
 {
-    use HasFactory;
+    use HasFactory , SoftDeletes;
     protected $fillable = [
         'user_id',
         'name',

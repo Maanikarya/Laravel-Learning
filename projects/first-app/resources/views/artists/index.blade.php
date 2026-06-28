@@ -8,9 +8,9 @@
         </p>
     @endif
     <h1>Artists</h1>
-    <a href="{{ route('artists.create') }}">Create Artists</a>
+    <h3><a href="{{ route('artists.create') }}">Create Artists</a></h3>
     <table>
-            <tr>
+        <tr>
             <th>Id</th>
             <th>Name</th>
             <th>Bio</th>
@@ -23,14 +23,14 @@
                 <td>{{ $artist->name }}</td>
                 <td>{{ $artist->bio }}</td>
                 <td>
-                     <img src="{{ $artist->image_url }}" alt="{{$artist->name}}">
+                     <img src="{{ $artist->image_url }}" alt="{{$artist->name}}" style="width: 150px; height: 150px; object-fit: cover;">
                 </td>
                 <td>
+                    <a href="{{ route('artists.show' , $artist->id ) }}">View</a>
+                    <br>
                     <a href="{{ route('artists.edit' , $artist->id ) }}">
                         Edit
                     </a>
-                    <br>
-                    <a href="{{ route('artists.show' , $artist->id ) }}">View</a>
                     <br>
                     <form action="{{ route('artists.destroy' , $artist->id ) }}" method="POST" style="display:inline;">
                         @csrf

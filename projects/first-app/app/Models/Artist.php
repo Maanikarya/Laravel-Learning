@@ -27,4 +27,11 @@ class Artist extends Model
     {
         return $this->hasMany(Song::class);
     }
+
+    public function getImageUrlAttribute()
+    {
+        return $this->image
+                ? asset('storage/' . $this->image)
+                : asset('storage/default_profile.jpg');
+    }
 }

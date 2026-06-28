@@ -11,10 +11,11 @@ use App\Models\Genre;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\Models\Playlist;
 use App\Models\User;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Song extends Model
 {
-    use HasFactory;
+    use HasFactory , SoftDeletes;
     protected $fillable = [
         'artist_id',
         'album_id',
