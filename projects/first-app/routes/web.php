@@ -1,11 +1,10 @@
 <?php
 
+use App\Http\Controllers\ArtistController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\ArtistController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::resource('/artists' , ArtistController::class);
+Route::resource('artists' , ArtistController::class);

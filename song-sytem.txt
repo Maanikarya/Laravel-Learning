@@ -29,5 +29,5 @@ php artisan db:seed
 
 ## Create Controllers
 
-php artisan make:controller Api/ArtistController --api 
+php artisan make:controller ArtistController --resource
 
