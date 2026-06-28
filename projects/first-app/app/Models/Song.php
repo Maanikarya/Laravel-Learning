@@ -57,4 +57,15 @@ class Song extends Model
         )->withTimestamps();
     }
 
+    public function getCoverImageUrlAttribute(){
+        return $this->cover_image
+        ? asset('storage/' . $this->cover_image )
+        : asset('storage/default_profile.jpg');
+    }
+
+    public function getAudioPathUrlAttribute(){
+        return $this->audio_path
+        ? asset('storage/' . $this->audio_path )
+        : asset('');
+    }
 }

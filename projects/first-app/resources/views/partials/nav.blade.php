@@ -16,7 +16,7 @@ Albums
 
 |
 
-<a href="#">
+<a href="{{ route('songs.index') }}">
 
 Songs
 
