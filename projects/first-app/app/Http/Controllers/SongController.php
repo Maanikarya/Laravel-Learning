@@ -20,12 +20,73 @@ class SongController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    // public function index(Request $request)
+    // {
+    //     print_r($request->input());
+
+    //     $songs = Song::query();
+
+    //     if( $request->filled('search') ){
+
+    //         $songs->where(
+    //             'title' ,
+    //             'like',
+    //             "%{$request->search}%"
+    //         );
+
+    //     }
+
+    //     if( $request->filled('artist') ){
+    //         $songs->where(
+    //             'artist_id' ,
+    //             $request->artist
+    //         );
+    //     }
+
+    //     $songs = $songs->with(['artist' , 'album' , 'genre'])
+    //     ->latest()
+    //     ->paginate(10);
+
+    //     return view('songs.index',compact('songs'));
+    // }
+
+    public function index(Request $request)
     {
-        $songs = Song::with(['artist' , 'album' , 'genre'])
-        ->latest()
-        ->paginate(10);
-        return view('songs.index',compact('songs'));
+        $songs = Song::query()
+            
+            ->with([
+                'artist',
+                'album' ,
+                'genre'
+            ])
+            
+            ->when(
+                $request->filled('search'),
+                function($query) use ($request){
+                    $query
+                    ->where(
+                        'title',
+                        'like',
+                        "%{$request->search}%"
+                    );
+                }
+            )
+            
+            ->when(
+                $request->filled('artist'),
+                function($query) use ($request){
+                    $query
+                    ->where(
+                        'artist_id',
+                        $request->artist
+                    );
+                }
+            )
+            ->latest()
+            ->paginate(10);
+
+
+        return view('songs.index' , compact('songs'));
     }
 
     /**
@@ -33,9 +94,10 @@ class SongController extends Controller
      */
     public function create()
     {
-        $artists = Artist::orderBy('name')->get();
-        $albums = Album::orderBy('title')->get();
-        $genres = Genre::orderBy('name')->get();
+        $artists = Artist::pluck('name' , 'id');
+        $albums = Album::pluck('title', 'id');
+        $genres = Genre::pluck('name', 'id');
+
         return view('songs.create' , [
             'song' => new Song(),
             'artists' => $artists,
@@ -70,9 +132,9 @@ class SongController extends Controller
      */
     public function edit(Song $song)
     {
-        $artists = Artist::orderBy('name')->get();
-        $albums = Album::orderBy('title')->get();
-        $genres = Genre::orderBy('name')->get();
+        $artists = Artist::pluck('name' , 'id');
+        $albums = Album::pluck('title', 'id');
+        $genres = Genre::pluck('name', 'id');
         return view('songs.edit' , [
             'song' => $song,
             'artists' => $artists,

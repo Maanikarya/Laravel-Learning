@@ -22,4 +22,12 @@ Songs
 
 </a>
 
+|
+
+<a href="{{ route('playlists.index') }}">
+
+Playlist
+
+</a>
+
 </nav>

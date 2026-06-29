@@ -24,12 +24,6 @@ class StoreSongRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
-
-            'duration' => [
-                'required',
-                // 'regex:/^\d{2}:\d{2}$/'
-            ],
-
             'artist_id' => 'required|exists:artists,id',
             'album_id'  => 'required|exists:albums,id',
             'genre_id'  => 'required|exists:genres,id',

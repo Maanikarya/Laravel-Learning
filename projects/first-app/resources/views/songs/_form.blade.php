@@ -9,14 +9,6 @@
 <div>
 
 <div style="margin-bottom: 30px">
-    <label for="duration">Duration</label>
-    <input type="text" name="duration" id="duration" value="{{ old('duration' , $song->duration ?? "") }}">
-    @error('duration')
-        <p style="color:red">{{ $message }}</p>
-    @enderror
-</div>
-
-<div style="margin-bottom: 30px">
     <label for="audio_path">Please upload the Song Audio</label>
     <input type="file" name="audio_path" id="audio_path">
     @error('audio_path')
@@ -36,11 +28,11 @@
     <label for="artist_id">Please Select Artist</label>
     <select name="artist_id" id="artist_id">
         <option value="">--Select Artist--</option>
-        @foreach ($artists as $artist)
-            <option value="{{ $artist->id }}"
-                @selected( old('artist_id', $song->artist_id ?? "") == $artist->id )
+        @foreach ($artists as $id => $name)
+            <option value="{{ $id }}"
+                @selected( old('artist_id', $song->artist_id ?? "") == $id)
                 >
-                {{ $artist->name }}
+                {{ $name }}
             </option>
         @endforeach
     </select>
@@ -53,11 +45,11 @@
     <label for="album_id">Please Select Album</label>
     <select name="album_id" id="album_id">
         <option value="">--Select Album</option>
-        @foreach ($albums as $album)
-            <option value="{{ $album->id }}"
-                @selected( old('album_id' , $song->album_id ?? "") == $album->id )
+        @foreach ($albums as $id => $title)
+            <option value="{{ $id }}"
+                @selected( old('album_id' , $song->album_id ?? "") == $id )
                 >
-                {{ $album->title }}
+                {{ $title }}
             </option>
         @endforeach
     </select>
@@ -70,11 +62,11 @@
     <label for="genre_id">Please Select Genre</label>
     <select name="genre_id" id="genre_id">
         <option value="">--Select Genre--</option>
-        @foreach ($genres as $genre)
-            <option value="{{ $genre->id }}"
-                @selected( old('genre_id', $song->genre_id ?? "") == $genre->id )
+        @foreach ($genres as $id => $name)
+            <option value="{{ $id }}"
+                @selected( old('genre_id', $song->genre_id ?? "") == $id )
                 >
-                {{ $genre->name }}
+                {{ $name }}
             </option>
         @endforeach
     </select>
