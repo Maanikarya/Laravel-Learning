@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
     @if (session('success'))
         <p style="color:green">{{ session('success') }}</p>

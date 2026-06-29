@@ -29,7 +29,7 @@ class UpdateSongRequest extends FormRequest
             'genre_id'  => 'required|exists:genres,id',
 
             'audio_path' => [
-                'required',
+                'nullable',
                 'file',
                 'mimes:mp3,mp4,wav,ogg',
                 'max:5120', //5MB

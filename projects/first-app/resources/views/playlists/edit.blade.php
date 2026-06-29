@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
     <h1>Edit Playlists</h1>
     <form action="{{ route('playlists.update' , $playlist->id) }}" method="POST">

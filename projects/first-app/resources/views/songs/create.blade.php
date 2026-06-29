@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
     <h1> Create Song </h1>
     <form action="{{ route('songs.store' ) }}" method="POST" enctype="multipart/form-data">

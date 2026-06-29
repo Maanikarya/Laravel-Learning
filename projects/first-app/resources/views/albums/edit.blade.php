@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
     <h1>Edit Albums</h1>
     <form action="{{ route('albums.update' , $album->id) }}" method="post" enctype="multipart/form-data">

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
 <h1>Album Details</h1>
 <img src="{{ $album->cover_image_url }}" alt=" {{ $album->title }} " style="width: 150px; height: 150px; object-fit: cover;">

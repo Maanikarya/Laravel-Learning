@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
 <h1>Artist Details</h1>
 <img src="{{ $artist->image_url }}" alt="{{$artist->name}}" style="width: 150px; height: 150px; object-fit: cover;">

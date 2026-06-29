@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
     <h1>Create Playlists</h1>
     <form action="{{ route('playlists.store') }}" method="POST">

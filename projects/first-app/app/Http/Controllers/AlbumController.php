@@ -48,7 +48,7 @@ class AlbumController extends Controller
 
         return redirect()
                 ->route('albums.index')
-                ->with('sucess' , 'ALbum created Sucessfully');
+                ->with('success' , 'ALbum created successfully');
     }
 
     /**
@@ -81,7 +81,7 @@ class AlbumController extends Controller
 
         return redirect()
                 ->route('albums.index')
-                ->with('sucess' , 'Album Inserted Sucessfully.');
+                ->with('success' , 'Album Inserted successfully.');
     }
 
     /**
@@ -94,6 +94,6 @@ class AlbumController extends Controller
         
         return redirect()
         ->route('albums.index')
-        ->with('sucess' , 'Album Deleted Sucessfully.');
+        ->with('success' , 'Album Deleted successfully.');
     }
 }

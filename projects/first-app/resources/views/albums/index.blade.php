@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
 
 @if (session('success'))
-    <p>
+    <p style="color:green">
         {{ session('success') }}
     </p>
 @endif

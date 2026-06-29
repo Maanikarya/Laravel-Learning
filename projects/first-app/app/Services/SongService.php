@@ -19,6 +19,8 @@ class SongService{
         {
            $data['audio_path'] = $data['audio_path']->store('song_audio' , 'public');
         }
+
+        $data['duration'] = 0;
         return Song::create($data);
     }
 
@@ -42,6 +44,7 @@ class SongService{
            $data['audio_path'] = $data['audio_path']->store('song_audio' , 'public');
         }
 
+        $data['duration'] = 0;
         $song->update($data);
         return $song;
     }
