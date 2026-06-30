@@ -1,0 +1,154 @@
+# Laravel & Angular Interview Questions
+
+## Laravel / PHP Questions
+
+### 1. Project Optimization & Performance
+
+* Explain a real optimization you implemented in a project.
+* Explain the N+1 Query Problem.
+* How do you optimize database queries?
+* How do you handle large data processing?
+
+### 2. Stripe Integration
+
+* What was the most difficult Stripe integration you worked on?
+* What are Stripe Webhooks?
+* What are Payment Intents?
+* What is Idempotency?
+* Explain a real-world Stripe implementation.
+
+### 3. Pass by Value vs Pass by Reference
+
+* Explain Pass by Value.
+* Explain Pass by Reference.
+* What are the differences?
+* Explain with PHP examples and use cases.
+
+### 4. Asynchronous Processing in Laravel
+
+* How do you achieve asynchronous processing in Laravel?
+* What are Queues?
+* What are Jobs?
+* What are Queue Workers?
+* Why is Redis commonly used for queues?
+
+### 5. Service Providers
+
+* What are Service Providers in Laravel?
+* What is the purpose of the `register()` method?
+* What is the purpose of the `boot()` method?
+* Explain Dependency Injection.
+* Explain the Service Container.
+
+### 6. ORM (Eloquent)
+
+* What is ORM?
+* What is Eloquent ORM?
+* What are the advantages and disadvantages of ORM?
+
+### 7. Events & Listeners
+
+* What are Events in Laravel?
+* What are Listeners?
+* Explain the Observer Pattern.
+* What are Queued Listeners?
+
+#### Common Use Cases
+
+* User Registration
+* Order Placement
+* Payment Success
+* Audit Logging
+
+### 8. Object-Oriented Programming (OOP)
+
+* Explain the four pillars of OOP:
+
+  * Encapsulation
+  * Inheritance
+  * Polymorphism
+  * Abstraction
+
+### 9. PHP Coding Questions
+
+#### Remove Duplicate Numbers from an Array
+
+* Remove duplicate values without using built-in functions.
+* Explain the time complexity (O(n²) vs O(n)).
+
+#### Flatten a Nested Array
+
+* Flatten a nested array using Recursion.
+* Handle arrays with dynamic nesting levels.
+
+#### Recursion
+
+* What is Recursion?
+* Explain the Base Condition.
+* Explain with a Factorial example.
+
+### 10. Laravel Forge
+
+* What is Laravel Forge?
+* Explain the deployment process.
+* Difference between Laravel Forge and Laravel Vapor.
+
+---
+
+# Previously Asked Laravel Questions
+
+* Tell me about yourself.
+* Controlled Component vs Uncontrolled Component (React).
+* What are PHP Interfaces?
+* Why do we use Interfaces?
+* Can an Interface have multiple implementations?
+* Explain Dependency Injection.
+* Authentication vs Authorization.
+* What is Middleware in Laravel?
+* Explain the SOLID Principles.
+* What is Chunking in Laravel?
+* Explain Database Indexing.
+* Explain Caching in Laravel.
+* Explain Queues and Background Jobs.
+* What are Database Transactions?
+* Eager Loading vs Lazy Loading.
+* API Optimization Techniques.
+
+---
+
+# Angular Questions to Prepare
+
+* Angular Lifecycle Hooks.
+* Observable vs Promise.
+* Dependency Injection in Angular.
+* Reactive Forms vs Template-Driven Forms.
+* RxJS Operators.
+* Angular Services.
+* Route Guards.
+* Lazy Loading.
+* Change Detection.
+* Component Communication.
+* HTTP Interceptors.
+
+---
+
+# Must-Know Laravel Questions (3+ Years Experience)
+
+* Repository Pattern.
+* Service Pattern.
+* Dependency Injection.
+* Service Container.
+* Service Providers.
+* Events & Listeners.
+* Queues & Jobs.
+* Laravel Passport vs Sanctum.
+* JWT Authentication.
+* Database Transactions.
+* Eloquent Relationships.
+* Eager Loading & N+1 Query Problem.
+* Caching (Redis).
+* Scheduling (Cron Jobs).
+* Exception Handling.
+* API Rate Limiting.
+* Stripe Webhooks.
+* Laravel Security (CSRF, XSS, SQL Injection).
