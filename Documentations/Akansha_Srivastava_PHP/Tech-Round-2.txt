@@ -1,0 +1,41 @@
+PHP related Interview:
+
+PHP / Laravel Interview Questions
+
+1. What is eager loading in Laravel?
+
+2. What are accessors and mutators in Laravel?
+
+3. What is the difference between DELETE and TRUNCATE?
+
+4. How do you create an infinite loop in PHP? (e.g., a loop that prints "Maanik" indefinitely)
+
+5. What is inheritance?
+
+6. If there are classes A, B, C, and D, and class A wants to use methods from B, C, and D, how would you implement this in code?
+
+7. Similarly, if there are interfaces B, C, and D, how would a class extend/implement multiple interfaces?
+
+8. What is an interface?
+
+9. How can you hide/secure the .env file so it doesn't get exposed on GitHub?
+
+10. Is there a way to run a project without a .env file?
+
+11. What is Docker?
+
+12. Will Docker work on a server without internet access?
+
+13. If a Docker image is live in production and you receive change requests from the client, do you need to build and deploy a new image to push the updates, or is there another way?
+
+14. What is the difference between PUT and PATCH?
+
+15. Can PATCH be used to update an entire resource, or is it limited to partial updates?
+
+16. What are encryption and decryption algorithms?
+
+17. What is the difference between AES and MD5? (please confirm exact terms if different)
+
+Notes:
+- This list was compiled from memory after an interview, so some wording may need refinement before reuse.
+- Recommended: research and write down answers for each before your next interview.

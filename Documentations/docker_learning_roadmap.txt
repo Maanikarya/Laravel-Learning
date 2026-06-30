@@ -1,0 +1,59 @@
+Docker for Laravel Developers (Complete Course)
+Course Roadmap
+
+Module 1: Docker Fundamentals ⭐ (Today)
+What is Docker?
+Why Docker was created?
+Virtual Machine vs Docker
+Image
+Container
+Docker Engine
+Docker Desktop
+Docker Hub
+Volumes
+Networks
+
+Module 2: Docker Installation
+Install Docker Desktop
+Verify installation
+Docker architecture
+First container
+
+Module 3: Docker Commands
+docker run
+docker ps
+docker images
+docker stop
+docker start
+docker rm
+docker exec
+
+Module 4: Dockerfile
+
+Build your own PHP image.
+
+Module 5: Docker Compose
+
+Run
+
+PHP
+MySQL
+Nginx
+Redis
+
+with one command.
+
+Module 6: Laravel in Docker
+
+Convert your Spotify Clone into Docker.
+
+
+Module 7: Advanced Docker
+Networks
+Volumes
+Cache
+Multi-stage builds
+Environment Variables
+Module 8: Interview Questions
+
+Everything companies ask.
